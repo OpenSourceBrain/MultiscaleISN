@@ -1,0 +1,17 @@
+/cells/SmithEtAl2013/analysis/HH2_476686112.soma_group.100syns.35degC.rates
+/cells/SmithEtAl2013/analysis/L23PyrRS.hoc
+/kernelseed
+x86_64
+temp
+/cells/HH2/*.dat
+/cells/HH2/*.hoc
+/cells/HH2/*.mod
+/cells/HH2/*.py
+/cells/SmithEtAl2013/LEMS_L23_IV.xml
+/cells/SmithEtAl2013/LEMS_L23_One.xml
+/cells/SmithEtAl2013/LEMS_L23_One_nrn.py
+/cells/SmithEtAl2013/*.dat
+/cells/SmithEtAl2013/*.mod
+/cells/SmithEtAl2013/*.hoc
+/cells/SmithEtAl2013/analysis
+/cells/HH2/simulator.props
