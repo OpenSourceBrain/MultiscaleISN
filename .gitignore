@@ -2,7 +2,6 @@
 /cells/SmithEtAl2013/analysis/L23PyrRS.hoc
 /kernelseed
 x86_64
-temp
 /cells/HH2/*.dat
 /cells/HH2/*.hoc
 /cells/HH2/*.mod
@@ -15,3 +14,6 @@ temp
 /cells/SmithEtAl2013/*.hoc
 /cells/SmithEtAl2013/analysis
 /cells/HH2/simulator.props
+/jsbml.log
+/libjhdf5.so
+/temp/
