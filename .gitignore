@@ -17,3 +17,6 @@ x86_64
 /jsbml.log
 /libjhdf5.so
 /temp/
+/ISN-nest-EI-0.gdf
+/pertinh.rate.*.dat
+/rates.png
