@@ -1118,6 +1118,55 @@ if __name__ == '__main__':
         
         run_one()
         
+        
+    elif '-neuroml' in sys.argv:
+        
+        fraction_inh_pert_rng = [0.9]
+        
+        for fraction_inh_pert in fraction_inh_pert_rng:
+            suffix = '';#str(int(fraction_inh_pert*100))
+            target_dir = './NeuroML2/';
+            
+            run_in_simulator = None
+            format = 'hdf5'
+        
+            generate(Bee = Bee,
+                    Bei = Bei,
+                    Bie = Bie,
+                    Bii = Bii,
+                    Be_bkg = Be_bkg,
+                    Be_stim = Be_stim,
+                    r_bkg = 0,
+                    r_stim = r_stim,
+                    r_bkg_ExtExc=r_bkg_ExtExc,
+                    r_bkg_ExtInh=r_bkg_ExtInh,
+                    r_bkg_ExtExc2=r_bkg_ExtExc2,
+                    Ttrans = Ttrans,
+                    Tblank= Tblank,
+                    Tstim = Tstim,
+                    Tpost = Tpost,
+                    exc_exc_conn_prob = exc_exc_conn_prob,
+                    exc_inh_conn_prob = exc_inh_conn_prob,
+                    inh_exc_conn_prob = inh_exc_conn_prob,
+                    inh_inh_conn_prob = inh_inh_conn_prob,
+                    ee2_conn_prob = ee2_conn_prob,
+                    ie2_conn_prob = ie2_conn_prob,
+                    connections=connections, connections2=connections2,
+                    fraction_inh_pert=fraction_inh_pert,
+                    duration = Ttrans+Tblank+Tstim+Tpost,
+                    dt = dt,
+                    scale_populations=scale_populations,
+                    format=format,
+                    percentage_exc_detailed=percentage_exc_detailed,
+                    target_dir=target_dir,
+                    suffix=suffix,
+                    run_in_simulator=run_in_simulator,
+                    num_processors=num_processors,
+                    exc_target_dendrites=exc_target_dendrites,
+                    inh_target_dendrites=inh_target_dendrites,
+                    v_clamp=v_clamp,
+                    simulation_seed=simulation_seed)
+        
     elif '-perturbation' in sys.argv:
         results = {}
         for fraction_inh_pert in fraction_inh_pert_rng:
