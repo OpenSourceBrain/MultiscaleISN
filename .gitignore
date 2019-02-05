@@ -23,3 +23,6 @@ x86_64
 /exc2.rate.*.dat
 /NeuroML2/ISN_net.gv
 /NeuroML2/ISN_net.gv.png
+/NeuroML2/*.pov
+/NeuroML2/*.gv*
+/NeuroML2/*.ini

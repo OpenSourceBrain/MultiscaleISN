@@ -8,7 +8,7 @@ def convert(base_dir='./temp/', detailed_also = False):
         files = ['%sSim_ISN_net.popExc.spikes'%base_dir,'%sSim_ISN_net.popInh.spikes'%base_dir, '%sSim_ISN_net.popExc2.spikes'%base_dir]
         
 
-    out_file = 'ISN-nest-EI-0.gdf'
+    out_file = 'ISN-nest-EI-0.gdf' ## NEST format gdf file...
     out = open(out_file,'w')
 
     for fn in files:

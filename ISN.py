@@ -75,11 +75,7 @@ def scale_pop_size(baseline, scale):
 
 def generate(scale_populations = 1,
              percentage_exc_detailed=0,
-             #exc2_cell = 'SmithEtAl2013/L23_Retuned_477127614',
              exc2_cell = 'SmithEtAl2013/L23_NoHotSpot',
-             #exc2_cell = 'BBP/cADpyr229_L23_PC_5ecbf9b163_0_0',
-             #exc2_cell = 'BBP/cNAC187_L23_NBC_9d37c4b1f8_0_0',
-             #exc2_cell = 'Thalamocortical/L23PyrRS',
              percentage_inh_detailed=0,
              scalex=1,
              scaley=1,
@@ -1124,7 +1120,9 @@ if __name__ == '__main__':
         fraction_inh_pert_rng = [0.9]
         
         for fraction_inh_pert in fraction_inh_pert_rng:
-            suffix = '';#str(int(fraction_inh_pert*100))
+            suffix = '';
+            if '-AllenCells' in sys.argv:
+                suffix = '_PointNeurons';
             target_dir = './NeuroML2/';
             
             run_in_simulator = None

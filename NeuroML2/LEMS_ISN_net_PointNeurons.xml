@@ -7,7 +7,7 @@
      -->
     
     <!-- Specify which component to run -->
-    <Target component="Sim_ISN_net" reportFile="report.txt"/>
+    <Target component="Sim_ISN_net_PointNeurons" reportFile="report.txt"/>
 
     <!-- Include core NeuroML2 ComponentType definitions -->
     <Include file="Cells.xml"/>
@@ -15,135 +15,44 @@
     <Include file="Simulation.xml"/>
     
     <Include file="./NoisyCurrentSource.xml"/>
-    <Include file="ISN_net/HH2_477127614.cell.nml"/>
-    <Include file="ISN_net/IM.channel.nml"/>
-    <Include file="ISN_net/Kd.channel.nml"/>
-    <Include file="ISN_net/Leak.channel.nml"/>
-    <Include file="ISN_net/Na.channel.nml"/>
-    <Include file="ISN_net/IL.channel.nml"/>
-    <Include file="ISN_net/HH2_476686112.cell.nml"/>
-    <Include file="ISN_net/L23_NoHotSpot.cell.nml"/>
-    <Include file="ISN_net/ca.channel.nml"/>
-    <Include file="ISN_net/it.channel.nml"/>
-    <Include file="ISN_net/kca.channel.nml"/>
-    <Include file="ISN_net/km.channel.nml"/>
-    <Include file="ISN_net/kv.channel.nml"/>
-    <Include file="ISN_net/na.channel.nml"/>
-    <Include file="ISN_net/pas.channel.nml"/>
-    <Include file="ISN_net.net.nml.h5"/>
+    <Include file="ISN_net_PointNeurons/HH2_477127614.cell.nml"/>
+    <Include file="ISN_net_PointNeurons/IM.channel.nml"/>
+    <Include file="ISN_net_PointNeurons/Kd.channel.nml"/>
+    <Include file="ISN_net_PointNeurons/Leak.channel.nml"/>
+    <Include file="ISN_net_PointNeurons/Na.channel.nml"/>
+    <Include file="ISN_net_PointNeurons/IL.channel.nml"/>
+    <Include file="ISN_net_PointNeurons/HH2_476686112.cell.nml"/>
+    <Include file="ISN_net_PointNeurons.net.nml.h5"/>
    
-    <Simulation id="Sim_ISN_net" length="2000.0ms" step="0.025ms" target="ISN_net" seed="100">  <!-- Note seed: ensures same random numbers used every run -->
-        
-        <Display id="IClamp_i_IPSC" title="Plots of IClamp_i_IPSC" timeScale="1ms" xmin="-200.0" xmax="2200.0" ymin="-1" ymax="1">
-            <Line id="popExc2_0_L23_NoHotSpot_1406_vclamp_cell0_seg1406_IPSC_i" quantity="popExc2/0/L23_NoHotSpot/1406/vclamp_cell0_seg1406_IPSC/i" scale="1" color="#6aa799" timeScale="1ms"/>
-        </Display>
+    <Simulation id="Sim_ISN_net_PointNeurons" length="2000.0ms" step="0.025ms" target="ISN_net_PointNeurons" seed="100">  <!-- Note seed: ensures same random numbers used every run -->
         
         <Display id="popInh" title="Plots of popInh" timeScale="1ms" xmin="-200.0" xmax="2200.0" ymin="-80" ymax="40">
-            <Line id="popInh_0_HH2_476686112_v" quantity="popInh/0/HH2_476686112/v" scale="1mV" color="#029a72" timeScale="1ms"/>
-            <Line id="popInh_1_HH2_476686112_v" quantity="popInh/1/HH2_476686112/v" scale="1mV" color="#d340bb" timeScale="1ms"/>
-            <Line id="popInh_2_HH2_476686112_v" quantity="popInh/2/HH2_476686112/v" scale="1mV" color="#4c73a9" timeScale="1ms"/>
-            <Line id="popInh_3_HH2_476686112_v" quantity="popInh/3/HH2_476686112/v" scale="1mV" color="#5e503a" timeScale="1ms"/>
-            <Line id="popInh_4_HH2_476686112_v" quantity="popInh/4/HH2_476686112/v" scale="1mV" color="#3193ca" timeScale="1ms"/>
-            <Line id="popInh_5_HH2_476686112_v" quantity="popInh/5/HH2_476686112/v" scale="1mV" color="#90e5e9" timeScale="1ms"/>
-            <Line id="popInh_6_HH2_476686112_v" quantity="popInh/6/HH2_476686112/v" scale="1mV" color="#29645f" timeScale="1ms"/>
-            <Line id="popInh_7_HH2_476686112_v" quantity="popInh/7/HH2_476686112/v" scale="1mV" color="#1fcff4" timeScale="1ms"/>
-            <Line id="popInh_8_HH2_476686112_v" quantity="popInh/8/HH2_476686112/v" scale="1mV" color="#6ed4e9" timeScale="1ms"/>
-            <Line id="popInh_9_HH2_476686112_v" quantity="popInh/9/HH2_476686112/v" scale="1mV" color="#8fe460" timeScale="1ms"/>
-        </Display>
-        
-        <Display id="IClamp_i_EPSC" title="Plots of IClamp_i_EPSC" timeScale="1ms" xmin="-200.0" xmax="2200.0" ymin="-1" ymax="1">
-            <Line id="popExc2_1_L23_NoHotSpot_1406_vclamp_cell1_seg1406_EPSC_i" quantity="popExc2/1/L23_NoHotSpot/1406/vclamp_cell1_seg1406_EPSC/i" scale="1" color="#2ca1c7" timeScale="1ms"/>
-        </Display>
-        
-        <Display id="popExc2" title="Plots of popExc2" timeScale="1ms" xmin="-200.0" xmax="2200.0" ymin="-80" ymax="40">
-            <Line id="popExc2_0_L23_NoHotSpot_v" quantity="popExc2/0/L23_NoHotSpot/v" scale="1mV" color="#8d9fe5" timeScale="1ms"/>
-            <Line id="popExc2_1_L23_NoHotSpot_v" quantity="popExc2/1/L23_NoHotSpot/v" scale="1mV" color="#5adad1" timeScale="1ms"/>
-            <Line id="popExc2_2_L23_NoHotSpot_v" quantity="popExc2/2/L23_NoHotSpot/v" scale="1mV" color="#f543bb" timeScale="1ms"/>
-            <Line id="popExc2_3_L23_NoHotSpot_v" quantity="popExc2/3/L23_NoHotSpot/v" scale="1mV" color="#175f0c" timeScale="1ms"/>
-            <Line id="popExc2_4_L23_NoHotSpot_v" quantity="popExc2/4/L23_NoHotSpot/v" scale="1mV" color="#fa8826" timeScale="1ms"/>
-            <Line id="popExc2_5_L23_NoHotSpot_v" quantity="popExc2/5/L23_NoHotSpot/v" scale="1mV" color="#6980a8" timeScale="1ms"/>
-            <Line id="popExc2_6_L23_NoHotSpot_v" quantity="popExc2/6/L23_NoHotSpot/v" scale="1mV" color="#8101e8" timeScale="1ms"/>
-            <Line id="popExc2_7_L23_NoHotSpot_v" quantity="popExc2/7/L23_NoHotSpot/v" scale="1mV" color="#25ece8" timeScale="1ms"/>
-            <Line id="popExc2_8_L23_NoHotSpot_v" quantity="popExc2/8/L23_NoHotSpot/v" scale="1mV" color="#b80e3b" timeScale="1ms"/>
-            <Line id="popExc2_9_L23_NoHotSpot_v" quantity="popExc2/9/L23_NoHotSpot/v" scale="1mV" color="#30a1f6" timeScale="1ms"/>
+            <Line id="popInh_0_HH2_476686112_v" quantity="popInh/0/HH2_476686112/v" scale="1mV" color="#6aa799" timeScale="1ms"/>
+            <Line id="popInh_1_HH2_476686112_v" quantity="popInh/1/HH2_476686112/v" scale="1mV" color="#029a72" timeScale="1ms"/>
+            <Line id="popInh_2_HH2_476686112_v" quantity="popInh/2/HH2_476686112/v" scale="1mV" color="#d340bb" timeScale="1ms"/>
+            <Line id="popInh_3_HH2_476686112_v" quantity="popInh/3/HH2_476686112/v" scale="1mV" color="#4c73a9" timeScale="1ms"/>
+            <Line id="popInh_4_HH2_476686112_v" quantity="popInh/4/HH2_476686112/v" scale="1mV" color="#5e503a" timeScale="1ms"/>
+            <Line id="popInh_5_HH2_476686112_v" quantity="popInh/5/HH2_476686112/v" scale="1mV" color="#3193ca" timeScale="1ms"/>
+            <Line id="popInh_6_HH2_476686112_v" quantity="popInh/6/HH2_476686112/v" scale="1mV" color="#90e5e9" timeScale="1ms"/>
+            <Line id="popInh_7_HH2_476686112_v" quantity="popInh/7/HH2_476686112/v" scale="1mV" color="#29645f" timeScale="1ms"/>
+            <Line id="popInh_8_HH2_476686112_v" quantity="popInh/8/HH2_476686112/v" scale="1mV" color="#1fcff4" timeScale="1ms"/>
+            <Line id="popInh_9_HH2_476686112_v" quantity="popInh/9/HH2_476686112/v" scale="1mV" color="#6ed4e9" timeScale="1ms"/>
         </Display>
         
         <Display id="popExc" title="Plots of popExc" timeScale="1ms" xmin="-200.0" xmax="2200.0" ymin="-80" ymax="40">
-            <Line id="popExc_0_HH2_477127614_v" quantity="popExc/0/HH2_477127614/v" scale="1mV" color="#577081" timeScale="1ms"/>
-            <Line id="popExc_1_HH2_477127614_v" quantity="popExc/1/HH2_477127614/v" scale="1mV" color="#06057c" timeScale="1ms"/>
-            <Line id="popExc_2_HH2_477127614_v" quantity="popExc/2/HH2_477127614/v" scale="1mV" color="#56eaa3" timeScale="1ms"/>
-            <Line id="popExc_3_HH2_477127614_v" quantity="popExc/3/HH2_477127614/v" scale="1mV" color="#f7acee" timeScale="1ms"/>
-            <Line id="popExc_4_HH2_477127614_v" quantity="popExc/4/HH2_477127614/v" scale="1mV" color="#fa9289" timeScale="1ms"/>
-            <Line id="popExc_5_HH2_477127614_v" quantity="popExc/5/HH2_477127614/v" scale="1mV" color="#be9985" timeScale="1ms"/>
-            <Line id="popExc_6_HH2_477127614_v" quantity="popExc/6/HH2_477127614/v" scale="1mV" color="#00e266" timeScale="1ms"/>
-            <Line id="popExc_7_HH2_477127614_v" quantity="popExc/7/HH2_477127614/v" scale="1mV" color="#f0b378" timeScale="1ms"/>
-            <Line id="popExc_8_HH2_477127614_v" quantity="popExc/8/HH2_477127614/v" scale="1mV" color="#deea95" timeScale="1ms"/>
-            <Line id="popExc_9_HH2_477127614_v" quantity="popExc/9/HH2_477127614/v" scale="1mV" color="#c55566" timeScale="1ms"/>
+            <Line id="popExc_0_HH2_477127614_v" quantity="popExc/0/HH2_477127614/v" scale="1mV" color="#8fe460" timeScale="1ms"/>
+            <Line id="popExc_1_HH2_477127614_v" quantity="popExc/1/HH2_477127614/v" scale="1mV" color="#2ca1c7" timeScale="1ms"/>
+            <Line id="popExc_2_HH2_477127614_v" quantity="popExc/2/HH2_477127614/v" scale="1mV" color="#8d9fe5" timeScale="1ms"/>
+            <Line id="popExc_3_HH2_477127614_v" quantity="popExc/3/HH2_477127614/v" scale="1mV" color="#5adad1" timeScale="1ms"/>
+            <Line id="popExc_4_HH2_477127614_v" quantity="popExc/4/HH2_477127614/v" scale="1mV" color="#f543bb" timeScale="1ms"/>
+            <Line id="popExc_5_HH2_477127614_v" quantity="popExc/5/HH2_477127614/v" scale="1mV" color="#175f0c" timeScale="1ms"/>
+            <Line id="popExc_6_HH2_477127614_v" quantity="popExc/6/HH2_477127614/v" scale="1mV" color="#fa8826" timeScale="1ms"/>
+            <Line id="popExc_7_HH2_477127614_v" quantity="popExc/7/HH2_477127614/v" scale="1mV" color="#6980a8" timeScale="1ms"/>
+            <Line id="popExc_8_HH2_477127614_v" quantity="popExc/8/HH2_477127614/v" scale="1mV" color="#8101e8" timeScale="1ms"/>
+            <Line id="popExc_9_HH2_477127614_v" quantity="popExc/9/HH2_477127614/v" scale="1mV" color="#25ece8" timeScale="1ms"/>
         </Display>
         
-        <OutputFile id="popExc2_seg1406_EPSC_v_dat" fileName="popExc2_seg1406_EPSC_v.dat">
-            <OutputColumn id="popExc2_1_L23_NoHotSpot_1406_v" quantity="popExc2/1/L23_NoHotSpot/1406/v"/> 
-        </OutputFile>
-        
-        <OutputFile id="ISN_net_popExc_v_dat" fileName="ISN_net_popExc_v.dat">
-            <OutputColumn id="popExc_0_HH2_477127614_v" quantity="popExc/0/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_1_HH2_477127614_v" quantity="popExc/1/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_2_HH2_477127614_v" quantity="popExc/2/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_3_HH2_477127614_v" quantity="popExc/3/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_4_HH2_477127614_v" quantity="popExc/4/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_5_HH2_477127614_v" quantity="popExc/5/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_6_HH2_477127614_v" quantity="popExc/6/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_7_HH2_477127614_v" quantity="popExc/7/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_8_HH2_477127614_v" quantity="popExc/8/HH2_477127614/v"/> 
-            <OutputColumn id="popExc_9_HH2_477127614_v" quantity="popExc/9/HH2_477127614/v"/> 
-        </OutputFile>
-        
-        <OutputFile id="v_clamps_i_seg2953_EPSC_100_dat" fileName="v_clamps_i_seg2953_EPSC.100.dat">
-            <OutputColumn id="popExc2_1_L23_NoHotSpot_2953_vclamp_cell1_seg2953_EPSC_i" quantity="popExc2/1/L23_NoHotSpot/2953/vclamp_cell1_seg2953_EPSC/i"/> 
-        </OutputFile>
-        
-        <OutputFile id="v_clamps_i_seg0_IPSC_100_dat" fileName="v_clamps_i_seg0_IPSC.100.dat">
-            <OutputColumn id="popExc2_0_L23_NoHotSpot_0_vclamp_cell0_seg0_IPSC_i" quantity="popExc2/0/L23_NoHotSpot/0/vclamp_cell0_seg0_IPSC/i"/> 
-        </OutputFile>
-        
-        <OutputFile id="ISN_net_popExc2_v_dat" fileName="ISN_net_popExc2_v.dat">
-            <OutputColumn id="popExc2_0_L23_NoHotSpot_v" quantity="popExc2/0/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_1_L23_NoHotSpot_v" quantity="popExc2/1/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_2_L23_NoHotSpot_v" quantity="popExc2/2/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_3_L23_NoHotSpot_v" quantity="popExc2/3/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_4_L23_NoHotSpot_v" quantity="popExc2/4/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_5_L23_NoHotSpot_v" quantity="popExc2/5/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_6_L23_NoHotSpot_v" quantity="popExc2/6/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_7_L23_NoHotSpot_v" quantity="popExc2/7/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_8_L23_NoHotSpot_v" quantity="popExc2/8/L23_NoHotSpot/v"/> 
-            <OutputColumn id="popExc2_9_L23_NoHotSpot_v" quantity="popExc2/9/L23_NoHotSpot/v"/> 
-        </OutputFile>
-        
-        <OutputFile id="popExc2_seg2953_IPSC_v_dat" fileName="popExc2_seg2953_IPSC_v.dat">
-            <OutputColumn id="popExc2_0_L23_NoHotSpot_2953_v" quantity="popExc2/0/L23_NoHotSpot/2953/v"/> 
-        </OutputFile>
-        
-        <OutputFile id="v_clamps_i_seg2953_IPSC_100_dat" fileName="v_clamps_i_seg2953_IPSC.100.dat">
-            <OutputColumn id="popExc2_0_L23_NoHotSpot_2953_vclamp_cell0_seg2953_IPSC_i" quantity="popExc2/0/L23_NoHotSpot/2953/vclamp_cell0_seg2953_IPSC/i"/> 
-        </OutputFile>
-        
-        <OutputFile id="v_clamps_i_seg1406_IPSC_100_dat" fileName="v_clamps_i_seg1406_IPSC.100.dat">
-            <OutputColumn id="popExc2_0_L23_NoHotSpot_1406_vclamp_cell0_seg1406_IPSC_i" quantity="popExc2/0/L23_NoHotSpot/1406/vclamp_cell0_seg1406_IPSC/i"/> 
-        </OutputFile>
-        
-        <OutputFile id="popExc2_seg2953_EPSC_v_dat" fileName="popExc2_seg2953_EPSC_v.dat">
-            <OutputColumn id="popExc2_1_L23_NoHotSpot_2953_v" quantity="popExc2/1/L23_NoHotSpot/2953/v"/> 
-        </OutputFile>
-        
-        <OutputFile id="v_clamps_i_seg0_EPSC_100_dat" fileName="v_clamps_i_seg0_EPSC.100.dat">
-            <OutputColumn id="popExc2_1_L23_NoHotSpot_0_vclamp_cell1_seg0_EPSC_i" quantity="popExc2/1/L23_NoHotSpot/0/vclamp_cell1_seg0_EPSC/i"/> 
-        </OutputFile>
-        
-        <OutputFile id="v_clamps_i_seg1406_EPSC_100_dat" fileName="v_clamps_i_seg1406_EPSC.100.dat">
-            <OutputColumn id="popExc2_1_L23_NoHotSpot_1406_vclamp_cell1_seg1406_EPSC_i" quantity="popExc2/1/L23_NoHotSpot/1406/vclamp_cell1_seg1406_EPSC/i"/> 
-        </OutputFile>
-        
-        <OutputFile id="ISN_net_popInh_v_dat" fileName="ISN_net_popInh_v.dat">
+        <OutputFile id="ISN_net_PointNeurons_popInh_v_dat" fileName="ISN_net_PointNeurons_popInh_v.dat">
             <OutputColumn id="popInh_0_HH2_476686112_v" quantity="popInh/0/HH2_476686112/v"/> 
             <OutputColumn id="popInh_1_HH2_476686112_v" quantity="popInh/1/HH2_476686112/v"/> 
             <OutputColumn id="popInh_2_HH2_476686112_v" quantity="popInh/2/HH2_476686112/v"/> 
@@ -156,11 +65,20 @@
             <OutputColumn id="popInh_9_HH2_476686112_v" quantity="popInh/9/HH2_476686112/v"/> 
         </OutputFile>
         
-        <OutputFile id="popExc2_seg1406_IPSC_v_dat" fileName="popExc2_seg1406_IPSC_v.dat">
-            <OutputColumn id="popExc2_0_L23_NoHotSpot_1406_v" quantity="popExc2/0/L23_NoHotSpot/1406/v"/> 
+        <OutputFile id="ISN_net_PointNeurons_popExc_v_dat" fileName="ISN_net_PointNeurons_popExc_v.dat">
+            <OutputColumn id="popExc_0_HH2_477127614_v" quantity="popExc/0/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_1_HH2_477127614_v" quantity="popExc/1/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_2_HH2_477127614_v" quantity="popExc/2/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_3_HH2_477127614_v" quantity="popExc/3/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_4_HH2_477127614_v" quantity="popExc/4/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_5_HH2_477127614_v" quantity="popExc/5/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_6_HH2_477127614_v" quantity="popExc/6/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_7_HH2_477127614_v" quantity="popExc/7/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_8_HH2_477127614_v" quantity="popExc/8/HH2_477127614/v"/> 
+            <OutputColumn id="popExc_9_HH2_477127614_v" quantity="popExc/9/HH2_477127614/v"/> 
         </OutputFile>
         
-        <EventOutputFile id="Spikes_file__popExc" fileName="Sim_ISN_net.popExc.spikes" format="ID_TIME">
+        <EventOutputFile id="Spikes_file__popExc" fileName="Sim_ISN_net_PointNeurons.popExc.spikes" format="ID_TIME">
             <EventSelection id="0" select="popExc/0/HH2_477127614" eventPort="spike"/> 
             <EventSelection id="1" select="popExc/1/HH2_477127614" eventPort="spike"/> 
             <EventSelection id="2" select="popExc/2/HH2_477127614" eventPort="spike"/> 
@@ -951,22 +869,19 @@
             <EventSelection id="787" select="popExc/787/HH2_477127614" eventPort="spike"/> 
             <EventSelection id="788" select="popExc/788/HH2_477127614" eventPort="spike"/> 
             <EventSelection id="789" select="popExc/789/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="790" select="popExc/790/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="791" select="popExc/791/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="792" select="popExc/792/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="793" select="popExc/793/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="794" select="popExc/794/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="795" select="popExc/795/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="796" select="popExc/796/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="797" select="popExc/797/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="798" select="popExc/798/HH2_477127614" eventPort="spike"/> 
+            <EventSelection id="799" select="popExc/799/HH2_477127614" eventPort="spike"/> 
         </EventOutputFile>
         
-        <EventOutputFile id="Spikes_file__popExc2" fileName="Sim_ISN_net.popExc2.spikes" format="ID_TIME">
-            <EventSelection id="0" select="popExc2/0/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="1" select="popExc2/1/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="2" select="popExc2/2/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="3" select="popExc2/3/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="4" select="popExc2/4/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="5" select="popExc2/5/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="6" select="popExc2/6/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="7" select="popExc2/7/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="8" select="popExc2/8/L23_NoHotSpot" eventPort="spike"/> 
-            <EventSelection id="9" select="popExc2/9/L23_NoHotSpot" eventPort="spike"/> 
-        </EventOutputFile>
-        
-        <EventOutputFile id="Spikes_file__popInh" fileName="Sim_ISN_net.popInh.spikes" format="ID_TIME">
+        <EventOutputFile id="Spikes_file__popInh" fileName="Sim_ISN_net_PointNeurons.popInh.spikes" format="ID_TIME">
             <EventSelection id="0" select="popInh/0/HH2_476686112" eventPort="spike"/> 
             <EventSelection id="1" select="popInh/1/HH2_476686112" eventPort="spike"/> 
             <EventSelection id="2" select="popInh/2/HH2_476686112" eventPort="spike"/> 
