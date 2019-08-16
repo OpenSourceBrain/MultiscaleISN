@@ -13,6 +13,9 @@ env:
     - OMV_ENGINE=jNeuroML_validate
 
 
+install:
+    - pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+
 script:
     - omv all -V
     - omv list -V 
