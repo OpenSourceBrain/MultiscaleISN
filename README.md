@@ -73,6 +73,7 @@ To run the 40 network simulations in NetPyNE for the point neuron network with 1
 
 
 
+[![Build Status](https://travis-ci.org/OpenSourceBrain/MultiscaleISN.svg?branch=master)](https://travis-ci.org/OpenSourceBrain/MultiscaleISN) 
 [![DOI](https://www.zenodo.org/badge/136594034.svg)](https://www.zenodo.org/badge/latestdoi/136594034)
 
 ### Reusing this model
