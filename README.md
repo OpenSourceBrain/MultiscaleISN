@@ -1,4 +1,5 @@
 # Multiscale ISN
+[![Continuous build using OMV](https://github.com/OpenSourceBrain/MultiscaleISN/actions/workflows/omv-ci.yml/badge.svg)](https://github.com/OpenSourceBrain/MultiscaleISN/actions/workflows/omv-ci.yml)
 
 Inhibition Stabilized Networks at multiple scales based on Sadeh et al. 2017. 
 
@@ -71,9 +72,6 @@ To run the 40 network simulations in NetPyNE for the point neuron network with 1
 
     ./runall_detailed.sh
 
-
-
-[![Build Status](https://travis-ci.org/OpenSourceBrain/MultiscaleISN.svg?branch=master)](https://travis-ci.org/OpenSourceBrain/MultiscaleISN) 
 [![DOI](https://www.zenodo.org/badge/136594034.svg)](https://www.zenodo.org/badge/latestdoi/136594034)
 
 ### Reusing this model
