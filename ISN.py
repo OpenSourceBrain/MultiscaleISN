@@ -518,7 +518,7 @@ def generate(scale_populations = 1,
         levels = {'IPSC': synAmpaEE.erev, 'EPSC':synGabaIE.erev}
         
         for l in levels:
-            cell_index = levels.keys().index(l)
+            cell_index = list(levels.keys()).index(l)
 
             pop = 'popExc2'
             plot = 'IClamp_i_%s'%(l)

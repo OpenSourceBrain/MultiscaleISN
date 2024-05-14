@@ -8,7 +8,7 @@
     <include href="it.channel.nml"/>
     <include href="pas.channel.nml"/>
 
-    <cell id="singleCompAllChans">
+    <cell id="cell">
 
         <notes>A single segment/compartment cell</notes>
 
