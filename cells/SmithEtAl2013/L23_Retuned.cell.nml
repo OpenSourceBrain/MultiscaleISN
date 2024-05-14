@@ -16726,6 +16726,7 @@
                 <channelDensity id="it_soma" ionChannel="it" condDensity="0.0003 S_per_cm2" erev="140.67523 mV" segmentGroup="soma_group" ion="ca"/>
                 <channelDensity id="ca_dends" ionChannel="ca" condDensity="5e-5 S_per_cm2" erev="140.67523 mV" segmentGroup="dendrite_group" ion="ca"/>
                 <channelDensity id="ca_soma" ionChannel="ca" condDensity="5e-5 S_per_cm2" erev="140.67523 mV" segmentGroup="soma_group" ion="ca"/>
+                <spikeThresh value="10mV"/>
                 <specificCapacitance value="1.04928685549 uF_per_cm2"/>
                 <initMembPotential value="-75.0 mV"/>
             </membraneProperties>
